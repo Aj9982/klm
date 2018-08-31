@@ -1,0 +1,222 @@
+String:
+http://mindbugzz.blogspot.co.uk/2012/05/what-is-difference-between-strings-and.html
+
+GVP
+https://docs.genesys.com/Documentation/GVP/85/GDG/ARCH
+sip:https://www.cisco.com/c/en/us/about/press/internet-protocol-journal/back-issues/table-contents-23/sip.html
+
+gvp architecure
+https://docs.genesys.com/Documentation/GVP/85/GDG/AGCF
+https://docs.genesys.com/Documentation/GVP/85/GDG/HGWRM#How_the_Resource_Manager_Works
+
+mrcp v1, v2 and rtsp
+http://www.daveburke.org/downloads/SP-Appendix-A.pdf
+http://www.voicexml.org/wp-content/uploads/sites/2/static/Review/Oct2006/features/MRCP.html
+https://tools.ietf.org/html/rfc4463
+https://tools.ietf.org/html/rfc6787
+http://www.unimrcp.org/
+
+how does ssl works:
+https://www.digicert.com/ssl/
+
+two way ssl
+https://kb.informatica.com/h2l/HowTo%20Library/1/0312_SSL_Two-Way_Configuration.pdf
+http://www.ossmentor.com/2015/03/one-way-and-two-way-ssl-and-tls.html
+http://www.robinhowlett.com/blog/2016/01/05/everything-you-ever-wanted-to-know-about-ssl-but-were-afraid-to-ask/
+
+
+Transfer
+https://www.w3.org/TR/voicexml21/#sec-xfer-consultation
+
+Time out properties of vxml:
+https://www.w3.org/TR/voicexml20/#dmlATiming
+
+Singleton Pattern:
+https://www.geeksforgeeks.org/singleton-design-pattern/
+singleton more patterns:
+https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples
+https://howtodoinjava.com/design-patterns/creational/singleton-design-pattern-in-java/
+
+difference between hashmap, treemap, linked hash map, hastable
+red-black tree structure,
+https://dzone.com/articles/hashmap-vs-treemap-vs
+
+
+set to array:
+https://www.geeksforgeeks.org/set-to-array-in-java/
+
+
+Inheritance in java
+https://www.geeksforgeeks.org/inheritance-in-java/
+https://www.geeksforgeeks.org/gfact-52-java-object-creation-of-inherited-classes/
+
+Polymorphisim
+https://www.geeksforgeeks.org/overriding-in-java/
+
+
+
+Super:
+https://www.geeksforgeeks.org/super-keyword/
+https://www.geeksforgeeks.org/accessing-grandparents-member-in-java-using-super/
+
+Abstraction and Encapsulation)
+https://www.geeksforgeeks.org/abstraction-in-java-2/
+https://www.geeksforgeeks.org/encapsulation-in-java/
+
+Volatile
+https://www.geeksforgeeks.org/volatile-keyword-in-java/
+
+
+
+Spring
+1. IOC:
+https://dzone.com/articles/ioc-vs-di
+
+
+Callers call into SIP 1-800 number, which routes through Acme to Avaya.
+Avaya CM receives the call and contacts Avaya IC via the AES (2.a) and then obtains the EDU ID and Routing from Avaya IC via the AES (2.b) 
+Avaya CM then sends the EDU ID  and other call data to the Avaya Session Manager which then sends the information to Genesys Voice Portal (GVP) (3a)
+Avaya CM also connects the voice traffic to GVP via the Avaya Media Server to  manage speech prompts and responses. (3.b)
+GVP interacts with the Websphere application over HTTP and dialogs with the caller(4).
+The Websphere application interacts with the Promise via Tuxedo services to provide data from Promise(5) and also with Avaya IC (6).
+If the  call is not completed in GVP, GVP  returns the call via a designated VDN per the call flow design.
+GVP concurrently then sends the routing data to session manager
+Avaya CM then sends the call information to Avaya IC via AES.
+ Avaya  IC then determines the queueing VDN (gvp_return) and provides the information to CM via the AES. 
+Avaya CM then routes the call to an available agent and provides the agent information to IC , via AES
+The agent’s PC then receive data for screen pops from IC. 
+Real-time call history data is sent to the Avaya IC/OA database from CM via the Avaya CMS
+
+
+
+grep -l Dansk * | xargs grep -l Norsk | xargs grep -l Svenska
+If you want also to find in hidden files:
+
+grep -l Dansk .* | xargs grep -l Norsk | xargs grep -l Svenska
+
+
+
+grep 'Empty' /usr/local/nglogs/NextGenInboundIVREAR/PIVRWAS*/logs/Audit_2016-12-18.log | grep -e '18 Dec 2016 11:0' -e '18 Dec 2016 11:1' -e '18 Dec 2016 11:2' | wc -l
+
+
+grep 'Request Parameters' /usr/local/nglogs/NextGenInboundIVREAR/PIVRWAS*/logs/Request_2016-12-18.log | grep -e '18 Dec 2016 11:0' -e '18 Dec 2016 11:1' -e '18 Dec 2016 11:2' | wc -l
+
+
+
+grep 'Inserted into TxSendNotification with TransactionId' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2017-01-24.log | grep  -e '8756715554923685' -e '8756715572701779' -e '8756715589619216' -e '8756715591270046' -e '8756715630558904' -e '8756715642833779' -e '8756715670144238' -e '8756715684475060' -e '8756715690019125' -e '8756715734586248' -e '8756715780506544' -e '8756715792137107' -e '8756715844713591' -e '8756715860893123' -e '8756715867432623' -e '8756715871541185' -e '8756716137356560' -e '8756716149428248' -e '8756716179618654' -e '8756716184357132' -e '8756716186907810' -e '8756716202833060' -e '8756716210420685' -e '8756716262107494' -e '8756716309226070' -e '8756716377131498' -e '8756716386033404' -e '8756716397798810' -e '8756716421124355' -e '8756716423012841' -e '8756716431594373' -e '8756716446175154' -e '8756716448767072' -e '8756716499497421' -e '8756716603386779' -e '8756716639882003' -e '8756716650787154' -e '8756716652175091' -e '8756716657002873' -e '8756716678350466' -e '8756716678607185' -e '8756716688909792' -e '8756716698824591' -e '8756716722172669' -e '8756716725349244' -e '8756716742110437' -e '8756716775979773' -e '8756716783521884' -e '8756716783834669' -e '8756716791636041' -e '8756716846471279' -e '8756716851729775' -e '8756716879992248' -e '8756716880467730' -e '8756717254502066' 
+
+
+
+$ ls | grep -e '_3539_' -e '_15196_' -e '_162_'
+grep  '20160412.07'  /usr/local/nglogs/NextGenInboundIVREAR/PIVRWAS*/logs/VistaTuning_2016-04-12.log  | grep  -c 'CallID='
+
+grep   'IWS005' /usr/local/nglogs/NextGenInboundFaxWSEAR/pivrwas3/logs/Audit_2016-04-26.log | wc -l
+
+grep -c  'IWS005' /usr/local/nglogs/NextGenInboundFaxWSEAR/pivrwas3/logs/Audit_2016-04-26.log 
+
+grep  '20160412.07'  /usr/local/nglogs/NextGenInboundIVREAR/PIVRWAS*/logs/VistaTuning_2016-04-12.log  | grep  -c 'CallID='
+
+
+grep  '26 Apr 2016 07'  /usr/local/nglogs/NextGenInboundFaxWSEAR/pivrwas3/logs/Audit_2016-04-26.log  | grep  -c 'IWS004'
+grep  'IWS004'  /usr/local/nglogs/NextGenInboundFaxWSEAR/pivrwas3/logs/Audit_2016-04-26.log  | grep  -e '26 Apr 2016 07'  -e '26 Apr 2016 06' -e '26 Apr 2016 08' | wc -l
+
+grep  -c 'BF(lookup'  /usr/local/nglogs/NextGenRCE*/*/logs/VistaTuning_2016-04-12.log   
+grep  -c 'BF(validate'  /usr/local/nglogs/NextGenRCE*/*/logs/VistaTuning_2016-04-12.log 
+grep  -c 'BF(Submit'  /usr/local/nglogs/NextGenRCE*/*/logs/VistaTuning_2016-04-12.log  
+
+
+
+
+
+grep -c 'DPUpdateDispositionRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log
+
+
+
+
+
+
+
+awk '/9 Nov 2016/{x="/usr/local/nglogs/MDC_1";p="F";if(index($0,"36868305521501966") != '0' ) {p="Y";} } {if ( p == "Y" )  {print > x;}}' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log
+
+Transaction Lookup :
+
+awk '/9 Nov 2016/{x="/usr/local/nglogs/Txn_1";row1=$0;p="F";if(index($0,"2016110911490253") != '0' ) {p="Y";} } { if(index($0,"2016110911490253") != '0' ) {p="Y";print row1 > x;} } {if ( p == "Y" )  {print > x;}}' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2016-11-16.log
+
+RxNumber Lookup :
+
+awk '/19 Oct 2016/{x="/usr/local/nglogs/Txn_1";row1=$0;} { if(index($0,"\"rxNumber\": \"469767\"") != '0' ) {print row1;} } ' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log
+
+pa1sia-pa1622
+
+grep -c 'ESBFault' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Console_2016-11-16.log
+grep 'ESBFault' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Console_2016-11-16.log
+
+grep -c 'SocketTimeoutException' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Console_2016-11-16.log
+grep 'SocketTimeoutException' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Console_2016-11-16.log
+
+grep -c 'OWSendNotificationRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log
+grep 'OWSendNotificationRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log
+
+grep -c 'DPUpdateDispositionRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log
+grep 'DPUpdateDispositionRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log
+
+grep -c 'PredialCheckSendBuffer' /usr/local/nglogs/OutboundRRIWebServiceEAR/*/logs/Request_2016-11-16.log
+
+grep -c 'OWGetRxNotificationHistoryResponse' /usr/local/nglogs/OutboundRRIWebServiceEAR/*/logs/Service_2016-11-16.log
+
+grep -c 'DPPredialCheckRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log
+grep 'DPPredialCheckRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log
+
+grep -c 'Mandatory Parameter missing' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2016-11-16.log
+grep 'Mandatory Parameter missing' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2016-11-16.log
+
+grep 'Time taken in IVR SendNotification is' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2016-11-04.log | grep 'Nov 2016 09:' | awk '{print $4,$10;}' > /usr/local/nglogs/ivrtime4.dat
+
+grep 'Time taken in DataPower sendNotificationService' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2016-11-04.log | grep -e 'Nov 2016 09:02:' -e 'Nov 2016 09:03:' -e 'Nov 2016 09:04:' -e 'Nov 2016 09:05:' | awk '{print $4,$10;}' > /usr/local/nglogs/dptime4.dat
+
+grep 'OWSendNotificationRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log | grep -e 'Nov 2016 09:00:' -e 'Nov 2016 09:01:' -e 'Nov 2016 09:02:' -e 'Nov 2016 09:03:' -e 'Nov 2016 09:04:' | /usr/local/nglogs/ivrfirst5sec.dat
+
+grep 'OWSendNotificationRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log | grep -e 'Nov 2016 08:00:' -e 'Nov 2016 08:01:' -e 'Nov 2016 08:02:' -e 'Nov 2016 08:03:' -e 'Nov 2016 08:04:' | awk '{print $4;}' > /usr/local/nglogs/sn_ivrfirst5min-8hour.dat
+
+grep 'OWSendNotificationRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log | grep -e 'Nov 2016 09:00:' -e 'Nov 2016 09:01:' -e 'Nov 2016 09:02:' -e 'Nov 2016 09:03:' -e 'Nov 2016 09:04:' | awk '{print $4;}' > /usr/local/nglogs/sn_ivrfirst5min-9hour.dat
+
+grep 'DPPredialCheckRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log | grep -e 'Nov 2016 08:00:' -e 'Nov 2016 08:01:' -e 'Nov 2016 08:02:' -e 'Nov 2016 08:03:' -e 'Nov 2016 08:04:' | awk '{print $4;}' > /usr/local/nglogs/pdc_ivrfirst5min-8hour.dat
+
+grep 'DPPredialCheckRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log | grep -e 'Nov 2016 09:00:' -e 'Nov 2016 09:01:' -e 'Nov 2016 09:02:' -e 'Nov 2016 09:03:' -e 'Nov 2016 09:04:' | awk '{print $4;}' > /usr/local/nglogs/pdc_ivrfirst5min-9hour.dat
+
+grep 'DPUpdateDispositionRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log | grep -e 'Nov 2016 08:00:' -e 'Nov 2016 08:01:' -e 'Nov 2016 08:02:' -e 'Nov 2016 08:03:' -e 'Nov 2016 08:04:' | awk '{print $4;}' > /usr/local/nglogs/upd_ivrfirst5min-8hour.dat
+
+grep 'DPUpdateDispositionRequest' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Request_2016-11-16.log | grep -e 'Nov 2016 09:00:' -e 'Nov 2016 09:01:' -e 'Nov 2016 09:02:' -e 'Nov 2016 09:03:' -e 'Nov 2016 09:04:' | awk '{print $4;}' > /usr/local/nglogs/upd_ivrfirst5min-9hour.dat
+
+grep 'Time taken in IVR SendNotification is' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2016-11-04.log | grep -e 'Nov 2016 09:02:' -e 'Nov 2016 09:03:' -e 'Nov 2016 09:04:' -e 'Nov 2016 09:05:'| awk '{print $4,$10;}' > /usr/local/nglogs/ivrtime4.dat
+
+grep 'Time taken in DataPower sendNotificationService' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2016-11-04.log | grep -e 'Nov 2016 09:02:' -e 'Nov 2016 09:03:' -e 'Nov 2016 09:04:' -e 'Nov 2016 09:05:' | awk '{print $4,$10;}' > /usr/local/nglogs/dptime4.dat
+
+
+
+-----------------------Find DB time ----------------------------------------------------------
+
+grep 'DB operations is' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2017-03-13.log | cut -c 96- | sed 's/ ms//g' | sed 's/Time taken in SN DB operations is /SN,/g' | sed 's/Time Taken in UpdDisp DB operations is /UD,/g' > /usr/local/nglogs/DBTime13Mar.dat
+-------------------------------------------------------------------------------
+
+For RCE
+-----------------------------------------------------
+awk '/23 Feb 2017/{x="/usr/local/nglogs/MDC_99";p="F";if(index($0,"A93539E8-30C7-51AF-D1B1-879A43A46536-5090") != '0' ) {p="Y";} } {if ( p == "Y" )  {print > x;}}' /usr/local/nglogs/NextGenRCEStgEAR/*/logs/Service_2017-02-23.log   
+
+
+
+
+
+
+
+--------------------Find avg and max response time for vendors Genesys and CSG================
+
+grep 'Time taken in DP SendNotification for OBGEN is' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2017-03-22.log | cut -c 174- | sed 's/ ms//g' > /usr/local/nglogs/GenesysService_2017-03-22.dat
+
+grep 'Time taken in DP SendNotification for OBGEN is' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2017-03-22.log | grep 'Mar 2017 09:' | cut -c 174- | sed 's/ ms//g' > /usr/local/nglogs/9-10GenesysService_2017-03-22.dat
+
+grep 'Time taken in DP SendNotification for OBCSG is' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2017-03-22.log | cut -c 174- | sed 's/ ms//g' > /usr/local/nglogs/CSGService_2017-03-22.dat
+
+grep 'Time taken in DP SendNotification for OBCSG is' /usr/local/nglogs/OutboundIVRWebServiceEAR/*/logs/Audit_2017-03-22.log | grep 'Mar 2017 09:' | cut -c 174- | sed 's/ ms//g' > /usr/local/nglogs/9-10CSGService_2017-03-22.dat
+
+
